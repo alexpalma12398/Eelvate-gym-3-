@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ELEVATE GYM — Chihuahua</title>
-  <meta name="description" content="Elevate Gym en Chihuahua. AV. AGUSTÍN MELGAR 3505. Máquinas, cardio, clases grupales y entrenamiento personal. 5am - 11pm todos los días." />
+  <meta name="description" content="Elevate Gym en Chihuahua. AV. AGUSTÍN MELGAR 3505. Máquinas, cardio, clases grupales y entrenamiento personal. L-V 5am-12am · Sáb 7am-10pm · Dom 9am-10pm." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -615,6 +615,163 @@
       text-shadow: 0 0 20px rgba(0,148,255,.4);
     }
 
+    /* ── PRECIOS ── */
+    #precios {
+      padding: 100px 0;
+      background: var(--dark3);
+      position: relative;
+    }
+    #precios::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    }
+
+    .precios-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .precios-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .precio-card {
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: 20px;
+      padding: 2.4rem 2rem;
+      position: relative;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .precio-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 48px rgba(0,0,0,.5);
+    }
+    .precio-card.destacado {
+      border-color: var(--blue);
+      box-shadow: 0 0 40px rgba(0,148,255,.12);
+    }
+    .precio-card.destacado:hover {
+      box-shadow: 0 16px 48px rgba(0,148,255,.25);
+    }
+
+    .precio-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .28rem .9rem;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+
+    .precio-tipo {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: .8rem;
+    }
+
+    .precio-valor {
+      display: flex;
+      align-items: flex-start;
+      gap: .2rem;
+      margin-bottom: .3rem;
+    }
+    .precio-moneda {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      color: var(--muted);
+      margin-top: .5rem;
+      letter-spacing: .04em;
+    }
+    .precio-numero {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--white);
+      letter-spacing: .02em;
+    }
+    .precio-card.destacado .precio-numero { color: var(--blue); }
+    .precio-periodo {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .precio-divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border2);
+      margin-bottom: 1.5rem;
+    }
+
+    .precio-incluye {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    .precio-incluye li {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      font-size: .85rem;
+      color: var(--text);
+    }
+    .precio-incluye li .check {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: rgba(0,148,255,.15);
+      border: 1px solid rgba(0,148,255,.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .precio-card.destacado .precio-incluye li .check {
+      background: rgba(0,148,255,.2);
+      border-color: var(--blue);
+    }
+
+    .precio-nota {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+    .precio-nota strong { color: var(--blue); }
+
+    @media (max-width: 600px) {
+      .precios-grid { grid-template-columns: 1fr; max-width: 380px; }
+    }
+
     /* ── GALERIA ── */
     #galeria {
       padding: 100px 0;
@@ -1085,9 +1242,9 @@
   </a>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#precios">Precios</a></li>
     <li><a href="#galeria">Galería</a></li>
     <li><a href="#ubicacion">Ubicación</a></li>
-    <li><a href="#redes">Redes</a></li>
   </ul>
   <a href="https://api.whatsapp.com/send/?phone=526141243258&text=Hola%2C%20me%20interesa%20inscribirme%20en%20Elevate%20Gym" target="_blank" class="nav-cta">Inscríbete</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Menu">
@@ -1098,6 +1255,7 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#servicios" onclick="closeMobileMenu()">Servicios</a>
+  <a href="#precios" onclick="closeMobileMenu()">Precios</a>
   <a href="#galeria" onclick="closeMobileMenu()">Galería</a>
   <a href="#ubicacion" onclick="closeMobileMenu()">Ubicación</a>
   <a href="#redes" onclick="closeMobileMenu()">Redes</a>
@@ -1147,7 +1305,7 @@
           </div>
           <div class="hero-stat">
             <div class="val">5<span>am</span></div>
-            <div class="lbl">Apertura</div>
+            <div class="lbl">Abre L-V</div>
           </div>
         </div>
       </div>
@@ -1213,7 +1371,7 @@
     <span class="ticker-item">Cardio</span>
     <span class="ticker-item">Clases Grupales</span>
     <span class="ticker-item">Entrenamiento Personal</span>
-    <span class="ticker-item">5am — 11pm</span>
+    <span class="ticker-item">L-V 5am — 12am · Sáb 7am — 10pm · Dom 9am — 10pm</span>
     <span class="ticker-item">Chihuahua</span>
     <span class="ticker-item">Eleva Tu Nivel</span>
     <!-- duplicate for seamless loop -->
@@ -1221,7 +1379,7 @@
     <span class="ticker-item">Cardio</span>
     <span class="ticker-item">Clases Grupales</span>
     <span class="ticker-item">Entrenamiento Personal</span>
-    <span class="ticker-item">5am — 11pm</span>
+    <span class="ticker-item">L-V 5am — 12am · Sáb 7am — 10pm · Dom 9am — 10pm</span>
     <span class="ticker-item">Chihuahua</span>
     <span class="ticker-item">Eleva Tu Nivel</span>
   </div>
@@ -1263,15 +1421,81 @@
       <div class="schedule-info">
         <div class="schedule-icon">🕐</div>
         <div class="schedule-text">
-          <div class="title">ABIERTO TODOS LOS DÍAS</div>
-          <div class="sub">Sin excepción — lunes a domingo, días festivos incluidos</div>
+          <div class="title">ABIERTO TODA LA SEMANA</div>
+          <div class="sub">Lunes a Viernes · Sábados · Domingos</div>
         </div>
       </div>
-      <div class="schedule-hours">5:00 AM — 11:00 PM</div>
+      <div class="schedule-hours" style="font-size:1.3rem;line-height:1.5;text-align:right">
+        L-V &nbsp;5:00 AM — 12:00 AM<br/>
+        Sáb &nbsp;7:00 AM — 10:00 PM<br/>
+        Dom &nbsp;9:00 AM — 10:00 PM
+      </div>
       <a href="https://api.whatsapp.com/send/?phone=526141243258&text=Hola%2C%20quiero%20informes%20sobre%20Elevate%20Gym" target="_blank" class="btn-primary" style="white-space:nowrap">
         Agenda tu visita →
       </a>
     </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="container">
+    <div class="precios-header">
+      <p class="section-label">Membresía</p>
+      <h2 class="section-title">PRECIOS</h2>
+      <p class="section-sub" style="margin:0 auto">Acceso completo a todas las actividades y servicios del gym.</p>
+    </div>
+
+    <div class="precios-grid">
+
+      <!-- Mensualidad regular -->
+      <div class="precio-card">
+        <div class="precio-tipo">Mensualidad</div>
+        <div class="precio-valor">
+          <span class="precio-moneda">$</span>
+          <span class="precio-numero">850</span>
+        </div>
+        <div class="precio-periodo">MXN / mes</div>
+        <div class="precio-divider"></div>
+        <ul class="precio-incluye">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Pesas &amp; máquinas</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Zona cardio</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Clases grupales</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Entrenamiento personal</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Acceso en horario completo</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send/?phone=526141243258&text=Hola%2C%20quiero%20inscribirme%20en%20Elevate%20Gym%20%28mensualidad%29" target="_blank" class="btn-secondary" style="width:100%;justify-content:center">
+          Inscribirme
+        </a>
+      </div>
+
+      <!-- Domiciliado -->
+      <div class="precio-card destacado">
+        <div class="precio-badge">Mejor precio</div>
+        <div class="precio-tipo">Domiciliado</div>
+        <div class="precio-valor">
+          <span class="precio-moneda">$</span>
+          <span class="precio-numero">750</span>
+        </div>
+        <div class="precio-periodo">MXN / mes</div>
+        <div class="precio-divider"></div>
+        <ul class="precio-incluye">
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Pesas &amp; máquinas</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Zona cardio</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Clases grupales</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Entrenamiento personal</li>
+          <li><span class="check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0094ff" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg></span>Acceso en horario completo</li>
+        </ul>
+        <a href="https://api.whatsapp.com/send/?phone=526141243258&text=Hola%2C%20quiero%20inscribirme%20en%20Elevate%20Gym%20%28domiciliado%29" target="_blank" class="btn-primary" style="width:100%;justify-content:center">
+          Inscribirme
+        </a>
+      </div>
+
+    </div>
+
+    <p class="precio-nota">
+      Pago domiciliado = cargo automático mensual · Ahorra <strong>$100 MXN</strong> cada mes
+    </p>
   </div>
 </section>
 
@@ -1342,7 +1566,11 @@
             <div class="info-icon">🕐</div>
             <div class="info-body">
               <div class="label">Horario</div>
-              <div class="value">Lunes a Domingo<br/>5:00 AM — 11:00 PM</div>
+              <div class="value">
+                Lun — Vie &nbsp;5:00 AM – 12:00 AM<br/>
+                Sábado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7:00 AM – 10:00 PM<br/>
+                Domingo &nbsp;&nbsp;&nbsp;9:00 AM – 10:00 PM
+              </div>
             </div>
           </li>
           <li class="info-item">
